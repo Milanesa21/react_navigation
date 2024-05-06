@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, StatusBar } from 'react-native';
 import { Audio, Video } from 'expo-av';
-import { useNavigation } from '@react-navigation/native'; // Importar useNavigation
+import { useNavigation } from '@react-navigation/native';
 
 export default function Monkey() {
-  const navigation = useNavigation(); // Obtener el objeto de navegación
+  const navigation = useNavigation();
 
   const [musicPlaying, setMusicPlaying] = useState(true);
   const [videoPlaying, setVideoPlaying] = useState(false);
@@ -49,7 +49,7 @@ export default function Monkey() {
   };
 
   const handleGoBack = () => {
-    navigation.goBack(); // Regresar a la pantalla anterior
+    navigation.goBack();
   };
 
   if (videoPlaying) {

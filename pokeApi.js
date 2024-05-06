@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Image, FlatList } from 'react-native';
 import { Card } from 'react-native-elements';
-import { useNavigation } from '@react-navigation/native'; // Importar useNavigation
+import { useNavigation } from '@react-navigation/native'; 
 
 const PokeApi = () => {
-  const navigation = useNavigation(); // Obtener el objeto de navegación
+  const navigation = useNavigation(); 
 
   const [pokemonData, setPokemonData] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -51,7 +51,7 @@ const PokeApi = () => {
   };
 
   const handleNavigateToMonkey = () => {
-    navigation.navigate('Monkey'); // Navegar a la pantalla Monkey
+    navigation.navigate('Monkey'); 
   };
 
   return (
