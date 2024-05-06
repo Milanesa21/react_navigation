@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, StatusBar } from 'react-native';
 import { Audio, Video } from 'expo-av';
 import { useNavigation } from '@react-navigation/native';
+import { moderateScale } from 'react-native-size-matters';
 
 export default function Monkey() {
   const navigation = useNavigation();
@@ -81,7 +82,7 @@ export default function Monkey() {
       <View style={styles.content}>
         <Text style={styles.text}>Goku, eta vaina e seria</Text>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={handlePlayVideo}>
+          <TouchableOpacity style={[styles.button, {width: moderateScale(200)}]} onPress={handlePlayVideo}>
             <Text style={styles.buttonText}>Reproducir Video</Text>
           </TouchableOpacity>
         </View>
@@ -101,30 +102,30 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
-    marginBottom: 40,
+    marginBottom: moderateScale(40),
   },
   text: {
-    fontSize: 40,
+    fontSize: moderateScale(40), 
     fontWeight: '400',
     fontStyle: 'normal',
-    marginBottom: 20,
+    marginBottom: moderateScale(20), 
     color: 'white',
   },
   buttonContainer: {
     position: 'absolute',
     bottom: 0,
-    marginBottom: 30,
+    marginBottom: moderateScale(30), 
     opacity: 0
   },
   button: {
     backgroundColor: 'rgba(255, 255, 255, 0.7)',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    marginVertical: 10,
+    paddingVertical: moderateScale(10), 
+    paddingHorizontal: moderateScale(20), 
+    borderRadius: moderateScale(5), 
+    marginVertical: moderateScale(10), 
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: moderateScale(16),
     color: 'black',
   },
 });
