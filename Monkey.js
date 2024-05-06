@@ -33,6 +33,16 @@ export default function Monkey() {
     };
   }, [musicPlaying]);
 
+  useEffect(() => {
+    const unsuscribe = navigation.addListener('beforeRemove',() =>{
+      if (soundObject) {
+        soundObject.stopAsync();
+      }
+    });
+    return unsuscribe
+  }, [navigation, soundObject]);
+
+
   const handlePlayVideo = () => {
     setVideoPlaying(true);
     setMusicPlaying(false);
